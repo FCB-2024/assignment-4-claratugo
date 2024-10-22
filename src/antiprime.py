@@ -20,19 +20,24 @@ def main(x):
 
 	# 2. Find the divisors of all the smaller positive integrers of x and count them
 	i = 0
+	n = 0
 	
 	while i < x-1:
 		i = i + 1		
 		divisors_i = divisors(i)	
 		if len(divisors_i) >= len(divisors_x):
-			return("not anti-prime")
-
+			n = n + 1
+		
 	## THE LAST LINES OF YOUR CODE SHOULD EITHER
 	## RETURN THE VALUE "anti-prime" or "not anti-prime"
 	## REPLACE THE FOLLOWING LINE BY WHATEVER LINES
 	## OF CODE ALLOW THIS FUNCTION TO RETURN THE VALUE
 	## "anti-prime" or "not anti-prime"
-	return("anti-prime")
+	
+	if n == 0:	
+		return("anti-prime")
+	else:
+		return("not anti-prime")
 
 ## DO NOT REMOVE THIS LINE BELOW
 if __name__ == "__main__" :
