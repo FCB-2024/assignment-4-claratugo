@@ -17,7 +17,6 @@ def main(x):
 	
 	# 1. Find the divisors of x and count them
 	divisors_x = divisors(x)
-	print("the divisors of", x, "are", divisors_x)
 
 	# 2. Find the divisors of all the smaller positive integrers of x and count them
 	i = 0
@@ -25,7 +24,6 @@ def main(x):
 	while i < x-1:
 		i = i + 1		
 		divisors_i = divisors(i)	
-		print("the divisors of", i, "are", divisors_i)
 		if len(divisors_i) >= len(divisors_x):
 			return("not anti-prime")
 
