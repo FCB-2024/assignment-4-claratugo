@@ -1,10 +1,33 @@
+def divisors(x):
+	divisors_x = []
+	i = 0
+        
+	while i < x:
+		i = i + 1
+		if x % i == 0:
+			 divisors_x.append(i)
+	return(divisors_x)
+
 ## ADD WHATEVER ARGUMENTS ARE NECESSARY TO THE MAIN FUNCTION
 ## IN THE SAME ORDER AS THE ARGUMENTS ARE TAKEN FROM THE
 ## COMMAND LINE SPECIFIED BELOW
 def main(x):
 	## YOU CODE SHOULD START HERE AT THE SAME
 	## IDENTATION AS THIS COMMENT
+	
+	# 1. Find the divisors of x and count them
+	divisors_x = divisors(x)
+	print("the divisors of", x, "are", divisors_x)
 
+	# 2. Find the divisors of all the smaller positive integrers of x and count them
+	i = 0
+	
+	while i < x-1:
+		i = i + 1		
+		divisors_i = divisors(i)	
+		print("the divisors of", i, "are", divisors_i)
+		if len(divisors_i) >= len(divisors_x):
+			return("not anti-prime")
 
 	## THE LAST LINES OF YOUR CODE SHOULD EITHER
 	## RETURN THE VALUE "anti-prime" or "not anti-prime"
@@ -23,5 +46,5 @@ if __name__ == "__main__" :
 	## YOU WANT TO FIGURE OUT WHETHER IS ANTI-PRIME OR NOT
 
 	import sys
-	x = sys.argv[1]
+	x = int(sys.argv[1])
 	print(main(x))
